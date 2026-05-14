@@ -339,12 +339,10 @@
   }
   .case-logo-wrap img {
     height: 110px; width: auto; max-width: 100%;
-    background: #fff;
-    padding: 18px 28px;
     border-radius: 14px;
     box-shadow: 0 16px 40px -16px rgba(0,0,0,0.6), 0 0 0 1px var(--border-strong);
   }
-  @media (max-width: 560px) { .case-logo-wrap img { height: 88px; padding: 14px 20px; } }
+  @media (max-width: 560px) { .case-logo-wrap img { height: 88px; } }
   .case-client-meta { display: flex; flex-direction: column; gap: 6px; }
   .case-client-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); font-weight: 700; }
   .case-client { font-size: 16px; color: #fff; font-weight: 500; line-height: 1.4; }
@@ -642,6 +640,20 @@
   .footer-contact { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
   .footer-contact a:hover { color: var(--accent); }
 
+  /* ---------- DUAL CAROUSEL ---------- */
+  .dual-carousel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 760px) { .dual-carousel-grid { grid-template-columns: 1fr; } }
+  .dual-carousel-grid .carousel { aspect-ratio: 4 / 3; }
+  .dual-carousel-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 14px;
+  }
+
   /* ---------- REVEAL ---------- */
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
   .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -702,7 +714,6 @@
 
     <div class="hero-trust reveal delay-3">
       <span data-i18n="hero.trust1">Broadcast television production background</span>
-      <span data-i18n="hero.trust2">Domenek Group LLC — Sheridan, WY, USA</span>
     </div>
 
     <div class="hero-ctas reveal delay-4">
@@ -713,7 +724,7 @@
 
   <div class="hero-marquee">
     <span><span class="dot"></span><span data-i18n="hero.marqueeL">NOW BOOKING Q3 / Q4 PROJECTS</span></span>
-    <span data-i18n="hero.marqueeR">SHERIDAN, WY · USA</span>
+    <span data-i18n="hero.marqueeR">TAMPA, FL · USA</span>
   </div>
 </section>
 
@@ -823,11 +834,8 @@
           <div class="result-item" data-i18n="case.r1">100+ product listings with full image &amp; video sets</div>
           <div class="result-item" data-i18n="case.r2">Full Amazon Storefront designed &amp; built</div>
           <div class="result-item" data-i18n="case.r3">Complete A+ Content across all product lines</div>
-          <div class="result-item" data-i18n="case.r4">Motion graphics videos for key product lines</div>
-          <div class="result-item" data-i18n="case.r5">AI imagery + lifestyle content for entire catalog</div>
-          <div class="result-item" data-i18n="case.r6">3D renders and product videos</div>
+          <div class="result-item" data-i18n="case.r4">Motion graphics &amp; 3D product videos</div>
           <div class="result-item" data-i18n="case.r7">Top Seller — multiple Amazon US categories</div>
-          <div class="result-item" data-i18n="case.r8">4.9★ · 2,600+ sales on Etsy</div>
         </div>
       </div>
     </div>
@@ -863,61 +871,63 @@
       </div>
     </div>
 
-    <!-- LIFESTYLE CAROUSEL -->
+    <!-- IMAGERY CAROUSELS — combinados -->
     <div class="mockup-block">
       <div class="mockup-head reveal">
-        <h3 data-i18n="case.lifestyle.title">Lifestyle Imagery</h3>
-        <p class="caption" data-i18n="case.lifestyle.sub">AI-generated scenes — no studio required.</p>
+        <h3 data-i18n="case.imagery.title">Lifestyle &amp; Product Imagery</h3>
+        <p class="caption" data-i18n="case.imagery.sub">AI-generated scenes and 3D renders — no studio required.</p>
       </div>
-      <div class="carousel reveal" data-carousel data-interval="3500">
-        <div class="carousel-slide active">
-          <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_3_wn3mei.png')"></div>
-          <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_3_wn3mei.png" alt="" />
+      <div class="dual-carousel-grid">
+        <!-- Lifestyle -->
+        <div>
+          <p class="dual-carousel-label" data-i18n="case.lifestyle.title">Lifestyle</p>
+          <div class="carousel reveal" data-carousel data-interval="3500">
+            <div class="carousel-slide active">
+              <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_3_wn3mei.png')"></div>
+              <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_3_wn3mei.png" alt="" />
+            </div>
+            <div class="carousel-slide">
+              <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_1_ha9tjh.png')"></div>
+              <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_1_ha9tjh.png" alt="" />
+            </div>
+            <div class="carousel-slide">
+              <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_2_mgjglk.png')"></div>
+              <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_2_mgjglk.png" alt="" />
+            </div>
+            <div class="carousel-slide">
+              <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_5_aneewg.png')"></div>
+              <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_5_aneewg.png" alt="" />
+            </div>
+            <button class="carousel-arrow prev" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="carousel-arrow next" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="carousel-dots"></div>
+          </div>
         </div>
-        <div class="carousel-slide">
-          <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_1_ha9tjh.png')"></div>
-          <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_1_ha9tjh.png" alt="" />
+        <!-- Product -->
+        <div>
+          <p class="dual-carousel-label" data-i18n="case.product.title">Product</p>
+          <div class="carousel reveal" data-carousel data-interval="4000">
+            <div class="carousel-slide active">
+              <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_1_e1zjef.png')"></div>
+              <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_1_e1zjef.png" alt="" />
+            </div>
+            <div class="carousel-slide">
+              <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_2_gelkmi.png')"></div>
+              <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_2_gelkmi.png" alt="" />
+            </div>
+            <div class="carousel-slide">
+              <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_3_gaijti.png')"></div>
+              <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_3_gaijti.png" alt="" />
+            </div>
+            <div class="carousel-slide">
+              <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_4_amko2b.png')"></div>
+              <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_4_amko2b.png" alt="" />
+            </div>
+            <button class="carousel-arrow prev" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="carousel-arrow next" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="carousel-dots"></div>
+          </div>
         </div>
-        <div class="carousel-slide">
-          <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_2_mgjglk.png')"></div>
-          <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_2_mgjglk.png" alt="" />
-        </div>
-        <div class="carousel-slide">
-          <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_5_aneewg.png')"></div>
-          <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_5_aneewg.png" alt="" />
-        </div>
-        <button class="carousel-arrow prev" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-        <button class="carousel-arrow next" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-        <div class="carousel-dots"></div>
-      </div>
-    </div>
-
-    <!-- PRODUCT CAROUSEL -->
-    <div class="mockup-block">
-      <div class="mockup-head reveal">
-        <h3 data-i18n="case.product.title">Product Imagery</h3>
-        <p class="caption" data-i18n="case.product.sub">3D renders and AI imagery — hyper-realistic.</p>
-      </div>
-      <div class="carousel reveal" data-carousel data-interval="3500">
-        <div class="carousel-slide active">
-          <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_1_e1zjef.png')"></div>
-          <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_1_e1zjef.png" alt="" />
-        </div>
-        <div class="carousel-slide">
-          <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_2_gelkmi.png')"></div>
-          <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_2_gelkmi.png" alt="" />
-        </div>
-        <div class="carousel-slide">
-          <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_3_gaijti.png')"></div>
-          <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_3_gaijti.png" alt="" />
-        </div>
-        <div class="carousel-slide">
-          <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_4_amko2b.png')"></div>
-          <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_4_amko2b.png" alt="" />
-        </div>
-        <button class="carousel-arrow prev" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-        <button class="carousel-arrow next" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-        <div class="carousel-dots"></div>
       </div>
     </div>
 
@@ -1159,9 +1169,8 @@ const i18n = {
     'hero.title': 'Broadcast-Quality Motion Graphics for Amazon Sellers',
     'hero.sub': '2D & 3D motion graphics, product videos, brand films, and A+ Content video — engineered to convert on Amazon.',
     'hero.trust1': 'Broadcast television production background',
-    'hero.trust2': 'Domenek Group LLC — Sheridan, WY, USA',
     'hero.marqueeL': 'NOW BOOKING Q3 / Q4 PROJECTS',
-    'hero.marqueeR': 'SHERIDAN, WY · USA',
+    'hero.marqueeR': 'TAMPA, FL · USA',
 
     'services.badge': 'What We Do',
     'services.title': 'Motion Graphics & Visual Content for Amazon',
@@ -1211,10 +1220,10 @@ const i18n = {
     'case.mockup2': '<strong>A+ Content</strong> — Complete module design',
     'case.mockup3': '<strong>Collection Pages</strong> — Lifestyle imagery at scale',
     'case.mockup4': '<strong>Product Listings</strong> — AI imagery + infographics',
-    'case.lifestyle.title': 'Lifestyle Imagery',
-    'case.lifestyle.sub': 'AI-generated scenes — no studio required.',
-    'case.product.title': 'Product Imagery',
-    'case.product.sub': '3D renders and AI imagery — hyper-realistic.',
+    'case.imagery.title': 'Lifestyle & Product Imagery',
+    'case.imagery.sub': 'AI-generated scenes and 3D renders — no studio required.',
+    'case.lifestyle.title': 'Lifestyle',
+    'case.product.title': 'Product',
     'case.quote': 'Domenek Group built our entire Amazon visual presence from scratch. Today we are a top seller across multiple product categories on Amazon US.',
     'case.quoteAttr': '— Threshold.Shop, New Jersey',
 
@@ -1257,9 +1266,8 @@ const i18n = {
     'hero.title': 'Motion Graphics con Calidad Broadcast para Vendedores de Amazon',
     'hero.sub': 'Motion graphics 2D y 3D, videos de producto, films de marca y video para A+ Content — diseñados para convertir en Amazon.',
     'hero.trust1': 'Experiencia en producción de televisión broadcast',
-    'hero.trust2': 'Domenek Group LLC — Sheridan, WY, EE. UU.',
     'hero.marqueeL': 'AGENDA ABIERTA — PROYECTOS Q3 / Q4',
-    'hero.marqueeR': 'SHERIDAN, WY · EE. UU.',
+    'hero.marqueeR': 'TAMPA, FL · EE. UU.',
 
     'services.badge': 'Lo Que Hacemos',
     'services.title': 'Motion Graphics y Contenido Visual para Amazon',
@@ -1309,10 +1317,10 @@ const i18n = {
     'case.mockup2': '<strong>A+ Content</strong> — Diseño de módulos completo',
     'case.mockup3': '<strong>Páginas de Colección</strong> — Imágenes lifestyle a escala',
     'case.mockup4': '<strong>Listings de Producto</strong> — Imágenes IA + infografías',
-    'case.lifestyle.title': 'Imagen Lifestyle',
-    'case.lifestyle.sub': 'Escenas generadas con IA — sin necesidad de estudio.',
-    'case.product.title': 'Imagen de Producto',
-    'case.product.sub': 'Renders 3D e imágenes con IA — hiperrealistas.',
+    'case.imagery.title': 'Imagen Lifestyle y de Producto',
+    'case.imagery.sub': 'Escenas generadas con IA y renders 3D — sin necesidad de estudio.',
+    'case.lifestyle.title': 'Lifestyle',
+    'case.product.title': 'Producto',
     'case.quote': 'Domenek Group construyó toda nuestra presencia visual en Amazon desde cero. Hoy somos top seller en múltiples categorías de Amazon US.',
     'case.quoteAttr': '— Threshold.Shop, New Jersey',
 
