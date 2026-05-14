@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Domenek Group — Amazon Motion Graphics & Visual Content</title>
+<meta name="description" content="Broadcast-quality motion graphics, video production, and visual content for Amazon sellers. Domenek Group LLC — Sheridan, WY." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+<style>
+  /* ---------- RESET & BASE ---------- */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body {
+    background: #092000;
+    color: #FFFFFF;
+    font-family: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+  :root {
+    --bg: #092000;
+    --bg-alt: #0D2E00;
+    --accent: #7DF902;
+    --text-secondary: rgba(255,255,255,0.65);
+    --text-tertiary: rgba(255,255,255,0.5);
+    --border: rgba(125,249,2,0.15);
+    --border-strong: rgba(125,249,2,0.35);
+  }
+
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  /* ---------- LAYOUT ---------- */
+  .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+  section { padding: 140px 0; position: relative; }
+  @media (max-width: 768px) { section { padding: 88px 0; } .container { padding: 0 20px; } }
+
+  /* ---------- TYPOGRAPHY ---------- */
+  .badge {
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: inline-block;
+    margin-bottom: 24px;
+  }
+  .badge.with-dot::before {
+    content: ""; display: inline-block; width: 6px; height: 6px;
+    background: var(--accent); border-radius: 50%;
+    margin-right: 12px; vertical-align: middle;
+    box-shadow: 0 0 12px var(--accent);
+  }
+  h1.hero-title {
+    font-weight: 800;
+    font-style: italic;
+    font-size: clamp(40px, 6.2vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -2px;
+    margin-bottom: 28px;
+    text-wrap: balance;
+  }
+  h2.section-title {
+    font-weight: 700;
+    font-size: clamp(34px, 4.4vw, 48px);
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+    text-wrap: balance;
+  }
+  h3, .h3 {
+    font-weight: 600;
+    font-size: clamp(22px, 2.3vw, 28px);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+  .subtitle {
+    font-weight: 300;
+    font-size: clamp(16px, 1.4vw, 18px);
+    color: var(--text-secondary);
+    max-width: 680px;
+    line-height: 1.6;
+  }
+  .caption {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--text-tertiary);
+  }
+  .section-head { margin-bottom: 72px; }
+  .section-head.center { text-align: center; }
+  .section-head.center .subtitle { margin-left: auto; margin-right: auto; }
+
+  /* ---------- BUTTONS ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 16px 28px;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.2px;
+    border-radius: 999px;
+    transition: transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease;
+    white-space: nowrap;
+  }
+  .btn:hover { transform: translateY(-2px) scale(1.02); }
+  .btn-primary { background: var(--accent); color: var(--bg); box-shadow: 0 0 0 0 rgba(125,249,2,0.5); }
+  .btn-primary:hover { box-shadow: 0 12px 40px -8px rgba(125,249,2,0.6); }
+  .btn-outline { border: 1.5px solid rgba(255,255,255,0.85); color: #fff; }
+  .btn-outline:hover { background: rgba(255,255,255,0.06); border-color: #fff; }
+  .btn-arrow { display: inline-block; transition: transform .25s ease; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* ---------- NAVBAR ---------- */
+  .navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    padding: 18px 0;
+    transition: background .35s ease, backdrop-filter .35s ease, border-color .35s ease, padding .35s ease;
+    border-bottom: 1px solid transparent;
+  }
+  .navbar.scrolled {
+    background: rgba(9, 32, 0, 0.75);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border-bottom-color: var(--border);
+    padding: 12px 0;
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+  .nav-logo img { height: 28px; width: auto; }
+  .nav-links { display: flex; align-items: center; gap: 36px; }
+  .nav-links a {
+    font-weight: 500;
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    transition: color .2s ease;
+    position: relative;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-right { display: flex; align-items: center; gap: 18px; }
+  .lang-toggle {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-weight: 500; font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    padding: 8px 4px;
+  }
+  .lang-toggle button { font: inherit; color: inherit; padding: 4px 6px; border-radius: 4px; transition: color .2s ease; }
+  .lang-toggle button.active { color: var(--accent); font-weight: 700; }
+  .lang-toggle .divider { opacity: 0.4; }
+  .nav-cta { padding: 11px 20px; font-size: 14px; }
+  .nav-mobile-toggle { display: none; padding: 8px; }
+
+  @media (max-width: 960px) {
+    .nav-links, .nav-cta { display: none; }
+    .nav-mobile-toggle { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; }
+    .nav-mobile-toggle svg { width: 22px; height: 22px; stroke: #fff; }
+  }
+  .mobile-menu {
+    position: fixed; inset: 0;
+    background: rgba(9, 32, 0, 0.97);
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    display: none;
+    padding: 100px 32px 40px;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-size: 22px; font-weight: 500; padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    color: #fff;
+  }
+  .mobile-menu .btn { margin-top: 20px; align-self: flex-start; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    min-height: 100vh;
+    padding-top: 140px; padding-bottom: 100px;
+    display: flex; align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-video, .hero-overlay {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+  }
+  .hero-video { object-fit: cover; z-index: 0; }
+  .hero-overlay {
+    z-index: 1;
+    background:
+      linear-gradient(180deg, rgba(9,32,0,0.55) 0%, rgba(9,32,0,0.7) 60%, rgba(9,32,0,0.95) 100%),
+      radial-gradient(ellipse at 70% 40%, rgba(9,32,0,0.2), rgba(9,32,0,0.75));
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 860px; }
+  .hero-trust {
+    display: flex; flex-direction: column; gap: 6px;
+    margin: 32px 0 36px;
+    font-size: 14px; font-weight: 500;
+    color: var(--accent);
+    letter-spacing: -0.1px;
+  }
+  .hero-trust span { display: inline-flex; align-items: center; gap: 10px; }
+  .hero-trust span::before { content: "✦"; font-size: 13px; }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-subhead { font-weight: 300; font-size: clamp(17px, 1.7vw, 21px); color: rgba(255,255,255,0.78); line-height: 1.5; max-width: 660px; }
+
+  .hero-marquee {
+    position: absolute; bottom: 32px; left: 0; right: 0;
+    z-index: 2;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 32px;
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(255,255,255,0.5); font-weight: 500;
+  }
+  .hero-marquee .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-right: 10px; box-shadow: 0 0 12px var(--accent); animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
+  @media (max-width: 640px) { .hero-marquee { display: none; } }
+
+  /* ---------- SERVICES ---------- */
+  .services-primary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .services-secondary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 960px) {
+    .services-primary { grid-template-columns: 1fr; }
+    .services-secondary { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .services-secondary { grid-template-columns: 1fr; }
+  }
+
+  .service-card {
+    position: relative;
+    background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 40px;
+    transition: border-color .35s ease, transform .35s ease, box-shadow .35s ease, background .35s ease;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 0%), rgba(125,249,2,0.08), transparent 40%);
+    opacity: 0; transition: opacity .4s ease; pointer-events: none;
+  }
+  .service-card:hover { border-color: var(--border-strong); transform: translateY(-4px); box-shadow: 0 20px 60px -20px rgba(125,249,2,0.18); }
+  .service-card:hover::before { opacity: 1; }
+  .service-card.featured {
+    padding: 48px;
+    background: linear-gradient(180deg, rgba(125,249,2,0.04), rgba(125,249,2,0.005));
+  }
+  .service-card .badge { margin-bottom: 20px; }
+  .service-card h3 { margin-bottom: 16px; }
+  .service-card p { color: var(--text-secondary); font-size: 16px; line-height: 1.65; }
+  .service-card.small { padding: 32px; }
+  .service-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: rgba(125,249,2,0.1);
+    border: 1px solid var(--border);
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-bottom: 24px;
+    color: var(--accent);
+  }
+  .service-icon svg { width: 22px; height: 22px; stroke-width: 1.5; }
+  .service-card.small h3 { font-size: 19px; margin-bottom: 12px; }
+  .service-card.small p { font-size: 14px; }
+  .featured-tag {
+    position: absolute; top: 24px; right: 24px;
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    color: var(--accent); text-transform: uppercase;
+  }
+
+  /* ---------- BROADCAST WORK ---------- */
+  .broadcast-section { background: var(--bg-alt); }
+  .vimeo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 960px) { .vimeo-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .vimeo-grid { grid-template-columns: 1fr; } }
+  .vimeo-wrap {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(125,249,2,0.2);
+    background: #000;
+    box-shadow: 0 24px 60px -30px rgba(0,0,0,0.7);
+    transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+  }
+  .vimeo-wrap:hover { transform: translateY(-3px); border-color: var(--border-strong); box-shadow: 0 30px 80px -20px rgba(125,249,2,0.25); }
+  .vimeo-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .broadcast-footnote { text-align: center; margin-top: 40px; }
+
+  /* ---------- CASE STUDY ---------- */
+  .case-hero {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 64px; align-items: start;
+    margin-bottom: 96px;
+  }
+  @media (max-width: 900px) { .case-hero { grid-template-columns: 1fr; gap: 40px; } }
+
+  .case-client-card {
+    display: flex; flex-direction: column; align-items: flex-start;
+    gap: 24px;
+    padding: 36px;
+    background: linear-gradient(180deg, rgba(125,249,2,0.06), rgba(125,249,2,0.01));
+    border: 1px solid var(--border-strong);
+    border-radius: 24px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .case-client-card::before {
+    content: "";
+    position: absolute; top: -120px; right: -80px;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(125,249,2,0.18), transparent 60%);
+    pointer-events: none;
+  }
+  .case-logo-wrap {
+    display: flex; align-items: center; gap: 24px;
+    flex-wrap: wrap;
+  }
+  .case-logo-wrap img {
+    height: 110px; width: auto; max-width: 100%;
+    background: #fff;
+    padding: 18px 28px;
+    border-radius: 14px;
+    box-shadow: 0 16px 40px -16px rgba(0,0,0,0.6), 0 0 0 1px var(--border-strong);
+  }
+  @media (max-width: 560px) { .case-logo-wrap img { height: 88px; padding: 14px 20px; } }
+  .case-client-meta { display: flex; flex-direction: column; gap: 6px; }
+  .case-client-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .case-client { font-size: 16px; color: #fff; font-weight: 500; line-height: 1.4; }
+  .case-rating { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-secondary); font-weight: 500; }
+  .case-rating .stars { color: var(--accent); letter-spacing: 2px; }
+  .case-description { color: var(--text-secondary); font-size: 17px; line-height: 1.7; }
+  .results-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .result-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 14px 18px;
+    background: rgba(125,249,2,0.04);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-size: 15px; line-height: 1.5;
+  }
+  .result-item::before {
+    content: "✦"; color: var(--accent); flex-shrink: 0; font-size: 14px; margin-top: 2px;
+  }
+  .stats-row {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 24px; margin: 56px 0;
+  }
+  .stat {
+    text-align: left;
+    border-left: 2px solid var(--accent);
+    padding: 8px 0 8px 22px;
+  }
+  .stat-num {
+    font-weight: 800;
+    font-size: clamp(34px, 4vw, 44px);
+    color: var(--accent);
+    letter-spacing: -1.5px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label { font-size: 14px; color: var(--text-secondary); font-weight: 400; }
+
+  /* ---------- MACBOOK MOCKUPS ---------- */
+  .mockup-block { margin-bottom: 96px; }
+  .mockup-head { margin-bottom: 56px; }
+  .mockup-head h3 { margin-bottom: 12px; }
+  .mockup-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+  @media (max-width: 760px) { .mockup-grid { grid-template-columns: 1fr; gap: 36px; } }
+  .mockup {
+    display: flex; flex-direction: column; align-items: stretch;
+  }
+  .mb-frame {
+    position: relative;
+    background: linear-gradient(180deg, #1a1a1a, #0c0c0c);
+    border-radius: 14px 14px 4px 4px;
+    padding: 16px 16px 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,0.8);
+  }
+  .mb-camera {
+    position: absolute; top: 7px; left: 50%; transform: translateX(-50%);
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #333; border: 1px solid #222;
+  }
+  .mb-screen {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #000;
+  }
+  .mb-screen img {
+    width: 100%; height: auto; display: block;
+    animation: scrollLoop 22s ease-in-out infinite;
+  }
+  @keyframes scrollLoop {
+    0%, 8% { transform: translateY(0); }
+    50% { transform: translateY(calc(-100% + 100%/1.6)); }
+    92%, 100% { transform: translateY(0); }
+  }
+  .mb-base {
+    height: 12px;
+    background: linear-gradient(180deg, #2a2a2a, #181818);
+    border-radius: 0 0 18px 18px;
+    margin: 0 -16px;
+    position: relative;
+  }
+  .mb-base::before {
+    content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 22%; height: 4px; background: #0a0a0a; border-radius: 0 0 6px 6px;
+  }
+  .mockup-caption {
+    margin-top: 22px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-align: center;
+  }
+  .mockup-caption strong { color: #fff; font-weight: 600; }
+
+  /* ---------- CAROUSELS ---------- */
+  .carousel {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #050f00;
+    border: 1px solid var(--border);
+    aspect-ratio: 16 / 10;
+  }
+  @media (max-width: 700px) { .carousel { aspect-ratio: 4 / 5; } }
+  .carousel-slide {
+    position: absolute; inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .carousel-slide.active { opacity: 1; }
+  .carousel-bg {
+    position: absolute; inset: -10%;
+    background-size: cover; background-position: center;
+    filter: blur(40px) brightness(0.45) saturate(1.1);
+    transform: scale(1.1);
+    z-index: 0;
+  }
+  .carousel-img {
+    position: relative; z-index: 1;
+    max-width: 100%; max-height: 100%;
+    width: auto; height: 100%;
+    object-fit: contain;
+    box-shadow: 0 30px 80px -20px rgba(0,0,0,0.7);
+  }
+  .carousel-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(9,32,0,0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-strong);
+    color: #fff;
+    display: inline-flex; align-items: center; justify-content: center;
+    z-index: 3;
+    transition: background .25s ease, transform .25s ease;
+  }
+  .carousel-arrow:hover { background: var(--accent); color: var(--bg); transform: translateY(-50%) scale(1.05); }
+  .carousel-arrow svg { width: 18px; height: 18px; stroke-width: 2; }
+  .carousel-arrow.prev { left: 18px; }
+  .carousel-arrow.next { right: 18px; }
+  .carousel-dots {
+    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 10px; z-index: 3;
+  }
+  .carousel-dots button {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    transition: background .3s ease, width .3s ease;
+  }
+  .carousel-dots button.active { background: var(--accent); width: 24px; border-radius: 4px; }
+
+  /* ---------- CAL EMBED ---------- */
+  .cal-embed-wrap {
+    background: #fff;
+    border-radius: 20px;
+    padding: 8px;
+    box-shadow: 0 24px 60px -20px rgba(9,32,0,0.4);
+    max-width: 980px;
+    margin: 0 auto 40px;
+    overflow: hidden;
+  }
+  #my-cal-inline-30min {
+    width: 100%;
+    min-height: 640px;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  @media (max-width: 640px) { #my-cal-inline-30min { min-height: 720px; } }
+
+  /* ---------- TESTIMONIAL ---------- */
+  .testimonial {
+    text-align: center;
+    margin-top: 80px;
+    padding: 56px 32px;
+    background: linear-gradient(180deg, rgba(125,249,2,0.04), rgba(125,249,2,0.01));
+    border: 1px solid var(--border);
+    border-radius: 24px;
+  }
+  .testimonial-quote {
+    font-weight: 300; font-style: italic;
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.7;
+    max-width: 760px; margin: 0 auto 24px;
+    color: #fff;
+    text-wrap: balance;
+  }
+  .testimonial-quote::before { content: "\201C"; font-size: 48px; color: var(--accent); line-height: 0; vertical-align: -16px; margin-right: 6px; }
+  .testimonial-quote::after { content: "\201D"; font-size: 48px; color: var(--accent); line-height: 0; vertical-align: -22px; margin-left: 4px; }
+  .testimonial-attr { font-size: 14px; font-weight: 500; color: var(--text-secondary); letter-spacing: 0.5px; }
+  .testimonial-attr .stars { color: var(--accent); margin-left: 8px; letter-spacing: 2px; }
+
+  /* ---------- PROCESS ---------- */
+  .process-section { background: var(--bg-alt); }
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    position: relative;
+  }
+  .process-grid::before {
+    content: ""; position: absolute;
+    top: 32px; left: 5%; right: 5%; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-strong), var(--border-strong), transparent);
+  }
+  @media (max-width: 900px) {
+    .process-grid { grid-template-columns: 1fr; gap: 36px; }
+    .process-grid::before { display: none; }
+  }
+  .process-step { position: relative; }
+  .step-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 64px; height: 64px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border-strong);
+    border-radius: 50%;
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .process-step h3 { margin-bottom: 12px; font-size: 20px; }
+  .process-step p { color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
+
+  /* ---------- WHY ---------- */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 900px) { .why-grid { grid-template-columns: 1fr; } }
+  .why-card {
+    padding: 40px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005));
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+  }
+  .why-card:hover { border-color: var(--border-strong); transform: translateY(-4px); box-shadow: 0 20px 50px -20px rgba(125,249,2,0.18); }
+  .why-card.featured { background: linear-gradient(180deg, rgba(125,249,2,0.05), rgba(125,249,2,0.005)); border-color: var(--border-strong); }
+  .why-card h3 { margin-bottom: 14px; font-size: 22px; }
+  .why-card p { color: var(--text-secondary); font-size: 15px; line-height: 1.65; }
+
+  /* ---------- CONTACT ---------- */
+  .contact-section {
+    background: var(--accent);
+    color: var(--bg);
+    text-align: center;
+  }
+  .contact-section .badge { color: rgba(9,32,0,0.7); }
+  .contact-section h2 { color: var(--bg); }
+  .contact-section .subtitle { color: rgba(9,32,0,0.8); margin: 0 auto 40px; }
+  .contact-ctas { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-bottom: 56px; }
+  .btn-dark { background: var(--bg); color: var(--accent); }
+  .btn-dark:hover { background: #051600; box-shadow: 0 12px 32px -8px rgba(9,32,0,0.4); }
+  .btn-outline-dark { border: 1.5px solid var(--bg); color: var(--bg); }
+  .btn-outline-dark:hover { background: rgba(9,32,0,0.06); }
+  .contact-details {
+    display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;
+    font-weight: 500; font-size: 15px;
+    color: var(--bg);
+  }
+  .contact-details a:hover { text-decoration: underline; }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 56px 0 40px;
+    border-top: 1px solid rgba(125,249,2,0.2);
+    background: var(--bg);
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  @media (max-width: 720px) { .footer-inner { grid-template-columns: 1fr; gap: 36px; } }
+  .footer-left img { height: 26px; width: auto; margin-bottom: 18px; }
+  .footer-tag { color: var(--text-tertiary); font-size: 14px; max-width: 320px; line-height: 1.6; margin-bottom: 18px; }
+  .footer-copy { color: var(--text-tertiary); font-size: 13px; }
+  .footer-right { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+  @media (min-width: 720px) { .footer-right { align-items: flex-end; text-align: right; } }
+  .footer-links { display: flex; gap: 22px; flex-wrap: wrap; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.7); margin-bottom: 8px; }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-contact { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+  .footer-contact a:hover { color: var(--accent); }
+
+  /* ---------- REVEAL ---------- */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal.delay-1 { transition-delay: .08s; }
+  .reveal.delay-2 { transition-delay: .16s; }
+  .reveal.delay-3 { transition-delay: .24s; }
+  .reveal.delay-4 { transition-delay: .32s; }
+
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="#top" aria-label="Domenek Group">
+      <img src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778785561/Logo_domenek.ai_fxrwgs.svg" alt="Domenek Group" />
+    </a>
+    <div class="nav-links">
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#broadcast-work" data-i18n="nav.work">Work</a>
+      <a href="#case-study" data-i18n="nav.case">Case Study</a>
+      <a href="#process" data-i18n="nav.process">Process</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button data-lang="en" class="active">EN</button>
+        <span class="divider">|</span>
+        <button data-lang="es">ES</button>
+      </div>
+      <a href="#contact" class="btn btn-primary nav-cta" data-i18n="cta.quote">Get a Free Quote</a>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" data-i18n="nav.services">Services</a>
+  <a href="#broadcast-work" data-i18n="nav.work">Work</a>
+  <a href="#case-study" data-i18n="nav.case">Case Study</a>
+  <a href="#process" data-i18n="nav.process">Process</a>
+  <a href="#contact" data-i18n="nav.contact">Contact</a>
+  <a href="#contact" class="btn btn-primary" data-i18n="cta.quote">Get a Free Quote</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" src="https://res.cloudinary.com/daf7s8gc8/video/upload/q_auto/f_auto/v1778793944/f73cd6a3-7fbdb75a_n5wjks.mp4"></video>
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content">
+    <span class="badge with-dot reveal" data-i18n="hero.eyebrow">Amazon Visual Content Agency</span>
+    <h1 class="hero-title reveal delay-1" data-i18n="hero.title">Broadcast-Quality Motion Graphics for Amazon Sellers</h1>
+    <p class="hero-subhead reveal delay-2" data-i18n="hero.sub">2D &amp; 3D motion graphics, product videos, brand films, and A+ Content video — engineered to convert on Amazon.</p>
+
+    <div class="hero-trust reveal delay-3">
+      <span data-i18n="hero.trust1">Broadcast television production background</span>
+      <span data-i18n="hero.trust2">Domenek Group LLC — Sheridan, WY, USA</span>
+    </div>
+
+    <div class="hero-ctas reveal delay-4">
+      <a href="#contact" class="btn btn-primary"><span data-i18n="cta.quote">Get a Free Quote</span> <span class="btn-arrow">→</span></a>
+      <a href="#broadcast-work" class="btn btn-outline" data-i18n="cta.viewWork">View Our Work</a>
+    </div>
+  </div>
+
+  <div class="hero-marquee">
+    <span><span class="dot"></span><span data-i18n="hero.marqueeL">NOW BOOKING Q3 / Q4 PROJECTS</span></span>
+    <span data-i18n="hero.marqueeR">SHERIDAN, WY · USA</span>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="badge" data-i18n="services.badge">What We Do</span>
+      <h2 class="section-title" data-i18n="services.title">Motion Graphics &amp; Visual Content for Amazon</h2>
+      <p class="subtitle" data-i18n="services.sub">Broadcast-quality video and visual content — everything your Amazon store needs to stand out and convert.</p>
+    </div>
+
+    <div class="services-primary">
+      <article class="service-card featured reveal">
+        <span class="featured-tag" data-i18n="services.specialty">★ Our Specialty</span>
+        <span class="badge" data-i18n="services.card1.eyebrow">Motion Graphics</span>
+        <h3 data-i18n="services.card1.title">Product &amp; Brand Motion Graphics</h3>
+        <p data-i18n="services.card1.body">Professional 2D and 3D motion graphics videos that bring your Amazon products to life. From 30-second product showcases to full brand films — produced at broadcast television quality. MP4 format, ready to upload directly to Amazon Seller Central, Storefronts, and Premium A+ Content.</p>
+      </article>
+      <article class="service-card featured reveal delay-1">
+        <span class="featured-tag" data-i18n="services.specialty">★ Our Specialty</span>
+        <span class="badge" data-i18n="services.card2.eyebrow">Storefront &amp; A+ Video</span>
+        <h3 data-i18n="services.card2.title">Amazon Storefront &amp; A+ Video</h3>
+        <p data-i18n="services.card2.body">Motion graphics and animated videos designed specifically for Amazon Storefronts and Premium A+ Content modules. Our videos maximize dwell time, communicate brand story, and drive conversion — leveraging every video placement Amazon offers.</p>
+      </article>
+    </div>
+
+    <div class="services-secondary">
+      <article class="service-card small reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 13.5 9 19 10.5 13.5 12 12 17 10.5 12 5 10.5 10.5 9z"/><path d="M19 17v3"/><path d="M17.5 18.5h3"/></svg></div>
+        <h3 data-i18n="services.card3.title">AI-Generated Imagery</h3>
+        <p data-i18n="services.card3.body">Hyper-realistic AI product images at scale. No physical samples required.</p>
+      </article>
+      <article class="service-card small reveal delay-1">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="10" y1="10" x2="10" y2="21"/></svg></div>
+        <h3 data-i18n="services.card4.title">Infographics</h3>
+        <p data-i18n="services.card4.body">Conversion-focused infographic images that communicate features and benefits at a glance.</p>
+      </article>
+      <article class="service-card small reveal delay-2">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div>
+        <h3 data-i18n="services.card5.title">Lifestyle Content</h3>
+        <p data-i18n="services.card5.body">AI-generated lifestyle imagery placing your product in premium real-world contexts.</p>
+      </article>
+      <article class="service-card small reveal delay-3">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <h3 data-i18n="services.card6.title">A+ Content (Standard &amp; Premium)</h3>
+        <p data-i18n="services.card6.body">Complete A+ module design — brand story, comparison charts, lifestyle banners, and video integration.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BROADCAST WORK ============ -->
+<section class="broadcast-section" id="broadcast-work">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="badge" data-i18n="work.badge">Our Work</span>
+      <h2 class="section-title" data-i18n="work.title">Broadcast Television Productions</h2>
+      <p class="subtitle" data-i18n="work.sub">Our creative team has produced motion graphics and visual content for international broadcast television networks — bringing that same cinematic standard to every Amazon project we deliver.</p>
+    </div>
+
+    <div class="vimeo-grid">
+      <div class="vimeo-wrap reveal"><iframe src="https://player.vimeo.com/video/888729146" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div>
+      <div class="vimeo-wrap reveal delay-1"><iframe src="https://player.vimeo.com/video/333636347" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div>
+      <div class="vimeo-wrap reveal delay-2"><iframe src="https://player.vimeo.com/video/888726906" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div>
+      <div class="vimeo-wrap reveal"><iframe src="https://player.vimeo.com/video/888734593" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div>
+      <div class="vimeo-wrap reveal delay-1"><iframe src="https://player.vimeo.com/video/888720481" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div>
+      <div class="vimeo-wrap reveal delay-2"><iframe src="https://player.vimeo.com/video/333633983" frameborder="0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div>
+    </div>
+
+    <p class="caption broadcast-footnote reveal" data-i18n="work.footnote">Motion graphics and visual content produced for international broadcast television networks.</p>
+  </div>
+</section>
+
+<!-- ============ CASE STUDY ============ -->
+<section id="case-study">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="badge" data-i18n="case.badge">In-Depth Case Study</span>
+      <h2 class="section-title" data-i18n="case.title">From Launch to Top Seller on Amazon US</h2>
+    </div>
+
+    <div class="case-hero">
+      <div class="reveal">
+        <div class="case-client-card">
+          <div class="case-logo-wrap">
+            <img src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778529411/Threshold.Shop_p3zq30.png" alt="Threshold.Shop logo" />
+            <div class="case-client-meta">
+              <span class="case-client-label" data-i18n="case.clientLabel">Featured Client</span>
+              <span class="case-client" data-i18n="case.client">Threshold.Shop — Natural Stone &amp; Marble, New Jersey, USA</span>
+              <span class="case-rating"><span class="stars">★★★★★</span> <span data-i18n="case.ratingNote">4.9 · 2,600+ verified sales on Etsy</span></span>
+            </div>
+          </div>
+        </div>
+        <p class="case-description" data-i18n="case.body">When Threshold.Shop launched on Amazon, they needed a complete visual identity built from zero. Domenek Group LLC became their exclusive creative partner — producing every image, every video, and every piece of A+ content across their entire catalog over 18 months. Today, Threshold.Shop is a top seller across multiple categories on Amazon US and holds a 4.9-star rating with over 2,600 sales on Etsy.</p>
+
+        <div class="stats-row">
+          <div class="stat"><div class="stat-num">100+</div><div class="stat-label" data-i18n="case.stat1">Product listings with full image &amp; video sets</div></div>
+          <div class="stat"><div class="stat-num">18mo</div><div class="stat-label" data-i18n="case.stat2">Exclusive creative partnership</div></div>
+          <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label" data-i18n="case.stat3">2,600+ verified sales on Etsy</div></div>
+          <div class="stat"><div class="stat-num">#1</div><div class="stat-label" data-i18n="case.stat4">Top seller in multiple Amazon US categories</div></div>
+        </div>
+      </div>
+
+      <div class="reveal delay-1">
+        <div class="results-grid">
+          <div class="result-item" data-i18n="case.r1">100+ product listings with full image &amp; video sets</div>
+          <div class="result-item" data-i18n="case.r2">Full Amazon Storefront designed &amp; built</div>
+          <div class="result-item" data-i18n="case.r3">Complete A+ Content across all product lines</div>
+          <div class="result-item" data-i18n="case.r4">Motion graphics videos for key product lines</div>
+          <div class="result-item" data-i18n="case.r5">AI imagery + lifestyle content for entire catalog</div>
+          <div class="result-item" data-i18n="case.r6">3D renders and product videos</div>
+          <div class="result-item" data-i18n="case.r7">Top Seller — multiple Amazon US categories</div>
+          <div class="result-item" data-i18n="case.r8">4.9★ · 2,600+ sales on Etsy</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK -->
+    <div class="mockup-block">
+      <div class="mockup-head reveal">
+        <h3 data-i18n="case.work.title">Visual Content Portfolio</h3>
+        <p class="caption" data-i18n="case.work.sub">A complete visual ecosystem built from scratch.</p>
+      </div>
+
+      <div class="mockup-grid">
+        <figure class="mockup reveal">
+          <div class="mb-frame"><div class="mb-camera"></div><div class="mb-screen"><img src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778529064/Threshold.shop_amazon_home_mzawqe.png" alt="Amazon Storefront" /></div></div>
+          <div class="mb-base"></div>
+          <figcaption class="mockup-caption" data-i18n="case.mockup1"><strong>Amazon Storefront</strong> — Full store design and build</figcaption>
+        </figure>
+        <figure class="mockup reveal delay-1">
+          <div class="mb-frame"><div class="mb-camera"></div><div class="mb-screen"><img src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789551/Threshold.shop_a_content_burqsd.png" alt="A+ Content" /></div></div>
+          <div class="mb-base"></div>
+          <figcaption class="mockup-caption" data-i18n="case.mockup2"><strong>A+ Content</strong> — Complete module design</figcaption>
+        </figure>
+        <figure class="mockup reveal">
+          <div class="mb-frame"><div class="mb-camera"></div><div class="mb-screen"><img src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778529065/Threshold.shop_Coleccion_qkobfs.png" alt="Collection pages" /></div></div>
+          <div class="mb-base"></div>
+          <figcaption class="mockup-caption" data-i18n="case.mockup3"><strong>Collection Pages</strong> — Lifestyle imagery at scale</figcaption>
+        </figure>
+        <figure class="mockup reveal delay-1">
+          <div class="mb-frame"><div class="mb-camera"></div><div class="mb-screen"><img src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778529068/Threshold.shop_Producto_ioxdmj.png" alt="Product listings" /></div></div>
+          <div class="mb-base"></div>
+          <figcaption class="mockup-caption" data-i18n="case.mockup4"><strong>Product Listings</strong> — AI imagery + infographics</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- LIFESTYLE CAROUSEL -->
+    <div class="mockup-block">
+      <div class="mockup-head reveal">
+        <h3 data-i18n="case.lifestyle.title">Lifestyle Imagery</h3>
+        <p class="caption" data-i18n="case.lifestyle.sub">AI-generated scenes — no studio required.</p>
+      </div>
+      <div class="carousel reveal" data-carousel data-interval="3500">
+        <div class="carousel-slide active">
+          <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_3_wn3mei.png')"></div>
+          <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_3_wn3mei.png" alt="" />
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_1_ha9tjh.png')"></div>
+          <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_1_ha9tjh.png" alt="" />
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_2_mgjglk.png')"></div>
+          <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_2_mgjglk.png" alt="" />
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_5_aneewg.png')"></div>
+          <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789463/Threshold.shop_lifestyle_5_aneewg.png" alt="" />
+        </div>
+        <button class="carousel-arrow prev" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button class="carousel-arrow next" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="carousel-dots"></div>
+      </div>
+    </div>
+
+    <!-- PRODUCT CAROUSEL -->
+    <div class="mockup-block">
+      <div class="mockup-head reveal">
+        <h3 data-i18n="case.product.title">Product Imagery</h3>
+        <p class="caption" data-i18n="case.product.sub">3D renders and AI imagery — hyper-realistic.</p>
+      </div>
+      <div class="carousel reveal" data-carousel data-interval="3500">
+        <div class="carousel-slide active">
+          <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_1_e1zjef.png')"></div>
+          <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_1_e1zjef.png" alt="" />
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_2_gelkmi.png')"></div>
+          <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_2_gelkmi.png" alt="" />
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_3_gaijti.png')"></div>
+          <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_3_gaijti.png" alt="" />
+        </div>
+        <div class="carousel-slide">
+          <div class="carousel-bg" style="background-image:url('https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_4_amko2b.png')"></div>
+          <img class="carousel-img" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778789404/Threshold.shop_Individual_product_listings_4_amko2b.png" alt="" />
+        </div>
+        <button class="carousel-arrow prev" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button class="carousel-arrow next" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="carousel-dots"></div>
+      </div>
+    </div>
+
+    <div class="testimonial reveal">
+      <p class="testimonial-quote" data-i18n="case.quote">Domenek Group built our entire Amazon visual presence from scratch. Today we are a top seller across multiple product categories on Amazon US.</p>
+      <p class="testimonial-attr"><span data-i18n="case.quoteAttr">— Threshold.Shop, New Jersey</span> <span class="stars">★★★★★</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process-section" id="process">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="badge" data-i18n="process.badge">Our Process</span>
+      <h2 class="section-title" data-i18n="process.title">Simple, Fast, Built Around Your Amazon Goals</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="step-num">01</div>
+        <h3 data-i18n="process.s1.title">Discovery Call</h3>
+        <p data-i18n="process.s1.body">We analyze your products, brand goals, and Amazon presence to define the exact video and visual strategy your store needs.</p>
+      </div>
+      <div class="process-step reveal delay-1">
+        <div class="step-num">02</div>
+        <h3 data-i18n="process.s2.title">Creative Strategy</h3>
+        <p data-i18n="process.s2.body">We map out every video, motion graphic, and visual asset needed — scripted, storyboarded, and planned before a single frame is produced.</p>
+      </div>
+      <div class="process-step reveal delay-2">
+        <div class="step-num">03</div>
+        <h3 data-i18n="process.s3.title">Production</h3>
+        <p data-i18n="process.s3.body">2D/3D motion graphics, brand videos, product animations, and supporting visual content — produced at broadcast quality, on schedule and on brand.</p>
+      </div>
+      <div class="process-step reveal delay-3">
+        <div class="step-num">04</div>
+        <h3 data-i18n="process.s4.title">Delivery</h3>
+        <p data-i18n="process.s4.body">Final MP4 files and all visual assets delivered in Amazon-ready formats. Ready to upload to Seller Central immediately.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="badge" data-i18n="why.badge">Why Domenek Group</span>
+      <h2 class="section-title" data-i18n="why.title">Not Just Designers — Broadcast-Grade Amazon Specialists</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card featured reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="22" x2="16" y2="22"/><line x1="12" y1="18" x2="12" y2="22"/></svg></div>
+        <h3 data-i18n="why.b1.title">Broadcast TV Background</h3>
+        <p data-i18n="why.b1.body">Our creative team is led by a Motion Graphics Artist with professional experience producing content for international broadcast television networks including Fox. We bring cinematic, broadcast-grade production standards to every Amazon video and listing we deliver.</p>
+      </div>
+      <div class="why-card reveal delay-1">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+        <h3 data-i18n="why.b2.title">Amazon Video Specialists</h3>
+        <p data-i18n="why.b2.body">We specialize in video content built specifically for Amazon's ecosystem — product videos, Storefront films, and Premium A+ video modules. Every second of footage is designed around Amazon's buyer psychology and conversion signals.</p>
+      </div>
+      <div class="why-card reveal delay-2">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <h3 data-i18n="why.b3.title">Full Visual Stack</h3>
+        <p data-i18n="why.b3.body">Beyond video, we deliver the complete visual package — AI imagery, infographics, lifestyle content, and A+ modules. One creative partner for your entire Amazon visual presence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="badge" data-i18n="contact.badge">Let's Build</span>
+      <h2 class="section-title" data-i18n="contact.title">Ready to Elevate Your Amazon Store?</h2>
+      <p class="subtitle" data-i18n="contact.sub">Book a free 30-minute consultation. Pick a time below — we'll review your current Amazon presence and deliver a custom video and visual strategy within 48 hours.</p>
+    </div>
+
+    <div class="cal-embed-wrap reveal delay-1">
+      <div id="my-cal-inline-30min"></div>
+    </div>
+
+    <div class="contact-ctas reveal delay-1">
+      <a href="mailto:domenekgroup@gmail.com" class="btn btn-dark"><span data-i18n="contact.cta2">Send Us an Email</span> <span class="btn-arrow">→</span></a>
+      <a href="tel:+15513249772" class="btn btn-outline-dark" data-i18n="contact.cta3">Call +1 (551) 324-9772</a>
+    </div>
+
+    <div class="contact-details reveal delay-2">
+      <a href="mailto:domenekgroup@gmail.com">📧 domenekgroup@gmail.com</a>
+      <a href="tel:+15513249772">📞 +1 (551) 324-9772</a>
+      <span>📍 Domenek Group LLC — Sheridan, WY, USA</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <img src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778785561/Logo_domenek.ai_fxrwgs.svg" alt="Domenek Group" />
+      <p class="footer-tag" data-i18n="footer.tag">Amazon Motion Graphics &amp; Visual Content Specialists.</p>
+      <p class="footer-copy" data-i18n="footer.copy">© 2025 Domenek Group LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#broadcast-work" data-i18n="nav.work">Work</a>
+        <a href="#case-study" data-i18n="nav.case">Case Study</a>
+        <a href="#process" data-i18n="nav.process">Process</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <a href="mailto:domenekgroup@gmail.com">domenekgroup@gmail.com</a><br />
+        <a href="tel:+15513249772">+1 (551) 324-9772</a><br />
+        <span data-i18n="footer.address">30 N Gould St, Ste N, Sheridan, WY 82801, USA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============ NAVBAR SCROLL ============ */
+const navbar = document.getElementById('navbar');
+const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 24);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+/* ============ MOBILE MENU ============ */
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+mobileToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+/* ============ HERO VIDEO — loop 0 → 52s ============ */
+const heroVideo = document.getElementById('heroVideo');
+if (heroVideo) {
+  const LOOP_END = 52;
+
+  heroVideo.addEventListener('timeupdate', () => {
+    if (heroVideo.currentTime >= LOOP_END) {
+      heroVideo.currentTime = 0;
+      heroVideo.play().catch(() => {});
+    }
+  });
+
+  heroVideo.muted = true;
+  heroVideo.defaultMuted = true;
+  heroVideo.setAttribute('muted', '');
+  heroVideo.setAttribute('playsinline', '');
+
+  const tryPlay = () => heroVideo.play().catch(() => {});
+  if (heroVideo.readyState >= 2) tryPlay();
+  heroVideo.addEventListener('loadeddata', tryPlay, { once: true });
+  heroVideo.addEventListener('canplay', tryPlay, { once: true });
+
+  const userStart = () => {
+    tryPlay();
+    window.removeEventListener('click', userStart);
+    window.removeEventListener('touchstart', userStart);
+    window.removeEventListener('scroll', userStart);
+  };
+  window.addEventListener('click', userStart, { once: true });
+  window.addEventListener('touchstart', userStart, { once: true });
+  window.addEventListener('scroll', userStart, { once: true, passive: true });
+}
+
+/* ============ REVEAL ON SCROLL ============ */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ============ SERVICE CARD MOUSE GLOW ============ */
+document.querySelectorAll('.service-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+});
+
+/* ============ CAROUSELS ============ */
+document.querySelectorAll('[data-carousel]').forEach(car => {
+  const slides = [...car.querySelectorAll('.carousel-slide')];
+  const dotsWrap = car.querySelector('.carousel-dots');
+  const interval = parseInt(car.dataset.interval || '3000', 10);
+  let idx = 0, timer = null;
+
+  slides.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.setAttribute('aria-label', `Slide ${i + 1}`);
+    if (i === 0) b.classList.add('active');
+    b.addEventListener('click', () => { go(i); restart(); });
+    dotsWrap.appendChild(b);
+  });
+  const dots = [...dotsWrap.children];
+
+  function go(n) {
+    slides[idx].classList.remove('active');
+    dots[idx].classList.remove('active');
+    idx = (n + slides.length) % slides.length;
+    slides[idx].classList.add('active');
+    dots[idx].classList.add('active');
+  }
+  function start() { stop(); timer = setInterval(() => go(idx + 1), interval); }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  function restart() { stop(); start(); }
+
+  car.querySelectorAll('.carousel-arrow').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const dir = parseInt(btn.dataset.dir, 10) || 1;
+      go(idx + dir);
+      restart();
+    });
+  });
+
+  car.addEventListener('mouseenter', stop);
+  car.addEventListener('mouseleave', start);
+  start();
+});
+
+/* ============ CAL.COM INLINE EMBED ============ */
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "30min", { origin: "https://app.cal.com" });
+Cal.ns["30min"]("inline", {
+  elementOrSelector: "#my-cal-inline-30min",
+  config: { "layout": "month_view", "useSlotsViewOnSmallScreen": "true" },
+  calLink: "domenek-group/30min",
+});
+Cal.ns["30min"]("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
+
+/* ============ LANGUAGE TOGGLE ============ */
+const i18n = {
+  en: {
+    'nav.services': 'Services','nav.work': 'Work','nav.case': 'Case Study','nav.process': 'Process','nav.contact': 'Contact',
+    'cta.quote': 'Get a Free Quote','cta.viewWork': 'View Our Work',
+
+    'hero.eyebrow': 'Amazon Visual Content Agency',
+    'hero.title': 'Broadcast-Quality Motion Graphics for Amazon Sellers',
+    'hero.sub': '2D & 3D motion graphics, product videos, brand films, and A+ Content video — engineered to convert on Amazon.',
+    'hero.trust1': 'Broadcast television production background',
+    'hero.trust2': 'Domenek Group LLC — Sheridan, WY, USA',
+    'hero.marqueeL': 'NOW BOOKING Q3 / Q4 PROJECTS',
+    'hero.marqueeR': 'SHERIDAN, WY · USA',
+
+    'services.badge': 'What We Do',
+    'services.title': 'Motion Graphics & Visual Content for Amazon',
+    'services.sub': 'Broadcast-quality video and visual content — everything your Amazon store needs to stand out and convert.',
+    'services.specialty': '★ Our Specialty',
+    'services.card1.eyebrow': 'Motion Graphics',
+    'services.card1.title': 'Product & Brand Motion Graphics',
+    'services.card1.body': 'Professional 2D and 3D motion graphics videos that bring your Amazon products to life. From 30-second product showcases to full brand films — produced at broadcast television quality. MP4 format, ready to upload directly to Amazon Seller Central, Storefronts, and Premium A+ Content.',
+    'services.card2.eyebrow': 'Storefront & A+ Video',
+    'services.card2.title': 'Amazon Storefront & A+ Video',
+    'services.card2.body': 'Motion graphics and animated videos designed specifically for Amazon Storefronts and Premium A+ Content modules. Our videos maximize dwell time, communicate brand story, and drive conversion — leveraging every video placement Amazon offers.',
+    'services.card3.title': 'AI-Generated Imagery',
+    'services.card3.body': 'Hyper-realistic AI product images at scale. No physical samples required.',
+    'services.card4.title': 'Infographics',
+    'services.card4.body': 'Conversion-focused infographic images that communicate features and benefits at a glance.',
+    'services.card5.title': 'Lifestyle Content',
+    'services.card5.body': 'AI-generated lifestyle imagery placing your product in premium real-world contexts.',
+    'services.card6.title': 'A+ Content (Standard & Premium)',
+    'services.card6.body': 'Complete A+ module design — brand story, comparison charts, lifestyle banners, and video integration.',
+
+    'work.badge': 'Our Work',
+    'work.title': 'Broadcast Television Productions',
+    'work.sub': 'Our creative team has produced motion graphics and visual content for international broadcast television networks — bringing that same cinematic standard to every Amazon project we deliver.',
+    'work.footnote': 'Motion graphics and visual content produced for international broadcast television networks.',
+
+    'case.badge': 'In-Depth Case Study',
+    'case.title': 'From Launch to Top Seller on Amazon US',
+    'case.clientLabel': 'Featured Client',
+    'case.ratingNote': '4.9 · 2,600+ verified sales on Etsy',
+    'case.client': 'Threshold.Shop — Natural Stone & Marble, New Jersey, USA',
+    'case.body': 'When Threshold.Shop launched on Amazon, they needed a complete visual identity built from zero. Domenek Group LLC became their exclusive creative partner — producing every image, every video, and every piece of A+ content across their entire catalog over 18 months. Today, Threshold.Shop is a top seller across multiple categories on Amazon US and holds a 4.9-star rating with over 2,600 sales on Etsy.',
+    'case.stat1': 'Product listings with full image & video sets',
+    'case.stat2': 'Exclusive creative partnership',
+    'case.stat3': '2,600+ verified sales on Etsy',
+    'case.stat4': 'Top seller in multiple Amazon US categories',
+    'case.r1': '100+ product listings with full image & video sets',
+    'case.r2': 'Full Amazon Storefront designed & built',
+    'case.r3': 'Complete A+ Content across all product lines',
+    'case.r4': 'Motion graphics videos for key product lines',
+    'case.r5': 'AI imagery + lifestyle content for entire catalog',
+    'case.r6': '3D renders and product videos',
+    'case.r7': 'Top Seller — multiple Amazon US categories',
+    'case.r8': '4.9★ · 2,600+ sales on Etsy',
+    'case.work.title': 'Visual Content Portfolio',
+    'case.work.sub': 'A complete visual ecosystem built from scratch.',
+    'case.mockup1': '<strong>Amazon Storefront</strong> — Full store design and build',
+    'case.mockup2': '<strong>A+ Content</strong> — Complete module design',
+    'case.mockup3': '<strong>Collection Pages</strong> — Lifestyle imagery at scale',
+    'case.mockup4': '<strong>Product Listings</strong> — AI imagery + infographics',
+    'case.lifestyle.title': 'Lifestyle Imagery',
+    'case.lifestyle.sub': 'AI-generated scenes — no studio required.',
+    'case.product.title': 'Product Imagery',
+    'case.product.sub': '3D renders and AI imagery — hyper-realistic.',
+    'case.quote': 'Domenek Group built our entire Amazon visual presence from scratch. Today we are a top seller across multiple product categories on Amazon US.',
+    'case.quoteAttr': '— Threshold.Shop, New Jersey',
+
+    'process.badge': 'Our Process',
+    'process.title': 'Simple, Fast, Built Around Your Amazon Goals',
+    'process.s1.title': 'Discovery Call',
+    'process.s1.body': 'We analyze your products, brand goals, and Amazon presence to define the exact video and visual strategy your store needs.',
+    'process.s2.title': 'Creative Strategy',
+    'process.s2.body': 'We map out every video, motion graphic, and visual asset needed — scripted, storyboarded, and planned before a single frame is produced.',
+    'process.s3.title': 'Production',
+    'process.s3.body': '2D/3D motion graphics, brand videos, product animations, and supporting visual content — produced at broadcast quality, on schedule and on brand.',
+    'process.s4.title': 'Delivery',
+    'process.s4.body': 'Final MP4 files and all visual assets delivered in Amazon-ready formats. Ready to upload to Seller Central immediately.',
+
+    'why.badge': 'Why Domenek Group',
+    'why.title': 'Not Just Designers — Broadcast-Grade Amazon Specialists',
+    'why.b1.title': 'Broadcast TV Background',
+    'why.b1.body': 'Our creative team is led by a Motion Graphics Artist with professional experience producing content for international broadcast television networks including Fox. We bring cinematic, broadcast-grade production standards to every Amazon video and listing we deliver.',
+    'why.b2.title': 'Amazon Video Specialists',
+    'why.b2.body': "We specialize in video content built specifically for Amazon's ecosystem — product videos, Storefront films, and Premium A+ video modules. Every second of footage is designed around Amazon's buyer psychology and conversion signals.",
+    'why.b3.title': 'Full Visual Stack',
+    'why.b3.body': 'Beyond video, we deliver the complete visual package — AI imagery, infographics, lifestyle content, and A+ modules. One creative partner for your entire Amazon visual presence.',
+
+    'contact.badge': "Let's Build",
+    'contact.title': 'Ready to Elevate Your Amazon Store?',
+    'contact.sub': "Book a free 30-minute consultation. Pick a time below — we'll review your current Amazon presence and deliver a custom video and visual strategy within 48 hours.",
+    'contact.cta1': 'Schedule Free Call',
+    'contact.cta2': 'Send Us an Email',
+    'contact.cta3': 'Call +1 (551) 324-9772',
+
+    'footer.tag': 'Amazon Motion Graphics & Visual Content Specialists.',
+    'footer.copy': '© 2025 Domenek Group LLC. All rights reserved.',
+    'footer.address': '30 N Gould St, Ste N, Sheridan, WY 82801, USA',
+  },
+  es: {
+    'nav.services': 'Servicios','nav.work': 'Trabajo','nav.case': 'Caso de Estudio','nav.process': 'Proceso','nav.contact': 'Contacto',
+    'cta.quote': 'Cotización Gratis','cta.viewWork': 'Ver Nuestro Trabajo',
+
+    'hero.eyebrow': 'Agencia de Contenido Visual para Amazon',
+    'hero.title': 'Motion Graphics con Calidad Broadcast para Vendedores de Amazon',
+    'hero.sub': 'Motion graphics 2D y 3D, videos de producto, films de marca y video para A+ Content — diseñados para convertir en Amazon.',
+    'hero.trust1': 'Experiencia en producción de televisión broadcast',
+    'hero.trust2': 'Domenek Group LLC — Sheridan, WY, EE. UU.',
+    'hero.marqueeL': 'AGENDA ABIERTA — PROYECTOS Q3 / Q4',
+    'hero.marqueeR': 'SHERIDAN, WY · EE. UU.',
+
+    'services.badge': 'Lo Que Hacemos',
+    'services.title': 'Motion Graphics y Contenido Visual para Amazon',
+    'services.sub': 'Video y contenido visual con calidad broadcast — todo lo que tu tienda en Amazon necesita para destacar y convertir.',
+    'services.specialty': '★ Nuestra Especialidad',
+    'services.card1.eyebrow': 'Motion Graphics',
+    'services.card1.title': 'Motion Graphics de Producto y Marca',
+    'services.card1.body': 'Videos profesionales de motion graphics 2D y 3D que dan vida a tus productos en Amazon. Desde showcases de producto de 30 segundos hasta films de marca completos — producidos con calidad de televisión broadcast. Formato MP4, listos para subir directamente a Amazon Seller Central, Storefronts y Premium A+ Content.',
+    'services.card2.eyebrow': 'Storefront y Video A+',
+    'services.card2.title': 'Storefront y Video A+ de Amazon',
+    'services.card2.body': 'Motion graphics y videos animados diseñados específicamente para Storefronts de Amazon y módulos de Premium A+ Content. Nuestros videos maximizan el tiempo de permanencia, comunican la historia de marca e impulsan la conversión — aprovechando cada ubicación de video que Amazon ofrece.',
+    'services.card3.title': 'Imágenes Generadas por IA',
+    'services.card3.body': 'Imágenes hiperrealistas de producto con IA, a escala. Sin necesidad de muestras físicas.',
+    'services.card4.title': 'Infografías',
+    'services.card4.body': 'Imágenes infográficas enfocadas en conversión que comunican características y beneficios de un vistazo.',
+    'services.card5.title': 'Contenido Lifestyle',
+    'services.card5.body': 'Imágenes lifestyle generadas con IA que colocan tu producto en contextos reales premium.',
+    'services.card6.title': 'A+ Content (Estándar y Premium)',
+    'services.card6.body': 'Diseño completo de módulos A+ — historia de marca, comparativas, banners lifestyle e integración de video.',
+
+    'work.badge': 'Nuestro Trabajo',
+    'work.title': 'Producciones para Televisión Broadcast',
+    'work.sub': 'Nuestro equipo creativo ha producido motion graphics y contenido visual para cadenas internacionales de televisión broadcast — llevando ese mismo estándar cinematográfico a cada proyecto de Amazon.',
+    'work.footnote': 'Motion graphics y contenido visual producidos para cadenas internacionales de televisión broadcast.',
+
+    'case.badge': 'Caso de Estudio Detallado',
+    'case.title': 'De Lanzamiento a Top Seller en Amazon US',
+    'case.clientLabel': 'Cliente Destacado',
+    'case.ratingNote': '4.9 · 2,600+ ventas verificadas en Etsy',
+    'case.client': 'Threshold.Shop — Piedra Natural y Mármol, New Jersey, EE. UU.',
+    'case.body': 'Cuando Threshold.Shop lanzó en Amazon, necesitaban una identidad visual completa construida desde cero. Domenek Group LLC se convirtió en su socio creativo exclusivo — produciendo cada imagen, cada video y cada pieza de A+ Content en todo su catálogo durante 18 meses. Hoy, Threshold.Shop es top seller en múltiples categorías de Amazon US y mantiene una calificación de 4.9 estrellas con más de 2,600 ventas en Etsy.',
+    'case.stat1': 'Listings de producto con sets completos de imagen y video',
+    'case.stat2': 'Alianza creativa exclusiva',
+    'case.stat3': '2,600+ ventas verificadas en Etsy',
+    'case.stat4': 'Top seller en múltiples categorías de Amazon US',
+    'case.r1': '100+ listings con sets completos de imagen y video',
+    'case.r2': 'Storefront completo de Amazon diseñado y construido',
+    'case.r3': 'A+ Content completo en todas las líneas de producto',
+    'case.r4': 'Videos de motion graphics para líneas clave',
+    'case.r5': 'Imágenes con IA + contenido lifestyle de todo el catálogo',
+    'case.r6': 'Renders 3D y videos de producto',
+    'case.r7': 'Top Seller — múltiples categorías de Amazon US',
+    'case.r8': '4.9★ · 2,600+ ventas en Etsy',
+    'case.work.title': 'Portafolio de Contenido Visual',
+    'case.work.sub': 'Un ecosistema visual completo construido desde cero.',
+    'case.mockup1': '<strong>Storefront de Amazon</strong> — Diseño y construcción completa',
+    'case.mockup2': '<strong>A+ Content</strong> — Diseño de módulos completo',
+    'case.mockup3': '<strong>Páginas de Colección</strong> — Imágenes lifestyle a escala',
+    'case.mockup4': '<strong>Listings de Producto</strong> — Imágenes IA + infografías',
+    'case.lifestyle.title': 'Imagen Lifestyle',
+    'case.lifestyle.sub': 'Escenas generadas con IA — sin necesidad de estudio.',
+    'case.product.title': 'Imagen de Producto',
+    'case.product.sub': 'Renders 3D e imágenes con IA — hiperrealistas.',
+    'case.quote': 'Domenek Group construyó toda nuestra presencia visual en Amazon desde cero. Hoy somos top seller en múltiples categorías de Amazon US.',
+    'case.quoteAttr': '— Threshold.Shop, New Jersey',
+
+    'process.badge': 'Nuestro Proceso',
+    'process.title': 'Simple, Rápido y Diseñado para tus Objetivos en Amazon',
+    'process.s1.title': 'Llamada de Descubrimiento',
+    'process.s1.body': 'Analizamos tus productos, objetivos de marca y presencia en Amazon para definir la estrategia exacta de video y visual que tu tienda necesita.',
+    'process.s2.title': 'Estrategia Creativa',
+    'process.s2.body': 'Planificamos cada video, motion graphic y asset visual necesario — con guion, storyboard y plan, antes de producir un solo frame.',
+    'process.s3.title': 'Producción',
+    'process.s3.body': 'Motion graphics 2D/3D, videos de marca, animaciones de producto y contenido visual de apoyo — producidos con calidad broadcast, a tiempo y en línea con la marca.',
+    'process.s4.title': 'Entrega',
+    'process.s4.body': 'Archivos MP4 finales y todos los assets visuales entregados en formatos listos para Amazon. Listos para subir a Seller Central de inmediato.',
+
+    'why.badge': 'Por Qué Domenek Group',
+    'why.title': 'No Solo Diseñadores — Especialistas de Amazon con Calidad Broadcast',
+    'why.b1.title': 'Experiencia en TV Broadcast',
+    'why.b1.body': 'Nuestro equipo creativo está liderado por un Motion Graphics Artist con experiencia profesional produciendo contenido para cadenas internacionales de televisión broadcast, incluyendo Fox. Llevamos estándares cinematográficos de calidad broadcast a cada video y listing de Amazon que entregamos.',
+    'why.b2.title': 'Especialistas en Video para Amazon',
+    'why.b2.body': 'Nos especializamos en contenido de video creado específicamente para el ecosistema de Amazon — videos de producto, films de Storefront y módulos de video Premium A+. Cada segundo de imagen está diseñado en torno a la psicología del comprador y las señales de conversión de Amazon.',
+    'why.b3.title': 'Stack Visual Completo',
+    'why.b3.body': 'Más allá del video, entregamos el paquete visual completo — imágenes con IA, infografías, contenido lifestyle y módulos A+. Un solo socio creativo para toda tu presencia visual en Amazon.',
+
+    'contact.badge': 'Construyamos',
+    'contact.title': '¿Listo para Elevar tu Tienda de Amazon?',
+    'contact.sub': 'Agenda una consulta gratuita de 30 minutos. Elige un horario abajo — revisaremos tu presencia actual en Amazon y entregaremos una estrategia personalizada de video y visual en menos de 48 horas.',
+    'contact.cta1': 'Agendar Llamada Gratis',
+    'contact.cta2': 'Escríbenos un Email',
+    'contact.cta3': 'Llama al +1 (551) 324-9772',
+
+    'footer.tag': 'Especialistas en Motion Graphics y Contenido Visual para Amazon.',
+    'footer.copy': '© 2025 Domenek Group LLC. Todos los derechos reservados.',
+    'footer.address': '30 N Gould St, Ste N, Sheridan, WY 82801, EE. UU.',
+  }
+};
+
+function applyLang(lang) {
+  const dict = i18n[lang] || i18n.en;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll('.lang-toggle button').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  try { localStorage.setItem('domenek-lang', lang); } catch (e) {}
+}
+document.querySelectorAll('.lang-toggle button').forEach(b => {
+  b.addEventListener('click', () => applyLang(b.dataset.lang));
+});
+const savedLang = (() => { try { return localStorage.getItem('domenek-lang'); } catch(e) { return null; } })();
+applyLang(savedLang || 'en');
+</script>
+
+</body>
+</html>
