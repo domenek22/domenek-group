@@ -308,17 +308,9 @@
   .broadcast-footnote { text-align: center; margin-top: 40px; }
 
   /* ---------- CASE STUDY ---------- */
-  .case-hero {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 64px; align-items: start;
-    margin-bottom: 96px;
-  }
-  @media (max-width: 900px) { .case-hero { grid-template-columns: 1fr; gap: 40px; } }
-
-  .case-client-card {
-    display: flex; flex-direction: column; align-items: flex-start;
-    gap: 24px;
+.case-client-card {
+    display: flex; flex-direction: column;
+    gap: 28px;
     padding: 36px;
     background: linear-gradient(180deg, rgba(125,249,2,0.06), rgba(125,249,2,0.01));
     border: 1px solid var(--border-strong);
@@ -339,51 +331,62 @@
     flex-wrap: wrap;
   }
   .case-logo-wrap img {
-    height: 110px; width: auto; max-width: 100%;
-    border-radius: 14px;
-    box-shadow: 0 16px 40px -16px rgba(0,0,0,0.6), 0 0 0 1px var(--border-strong);
+    height: 88px; width: auto; max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px -12px rgba(0,0,0,0.6), 0 0 0 1px var(--border-strong);
   }
-  @media (max-width: 560px) { .case-logo-wrap img { height: 88px; } }
+  @media (max-width: 560px) { .case-logo-wrap img { height: 68px; } }
   .case-client-meta { display: flex; flex-direction: column; gap: 6px; }
   .case-client-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); font-weight: 700; }
   .case-client { font-size: 16px; color: #fff; font-weight: 500; line-height: 1.4; }
   .case-rating { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-secondary); font-weight: 500; }
   .case-rating .stars { color: var(--accent); letter-spacing: 2px; }
-  .case-description { color: var(--text-secondary); font-size: 17px; line-height: 1.7; }
+
+  /* Stats integrados en la card */
+  .case-stats-strip {
+    display: flex; align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    gap: 0;
+  }
+  .case-stat { flex: 1; text-align: center; }
+  .case-stat-num {
+    font-weight: 800;
+    font-size: clamp(26px, 3vw, 36px);
+    color: var(--accent);
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .case-stat-label { font-size: 12px; color: var(--text-secondary); font-weight: 400; letter-spacing: 0.2px; }
+  .case-stat-divider { width: 1px; height: 40px; background: var(--border); flex-shrink: 0; }
+
+  /* Descripción + resultados en dos columnas */
+  .case-body-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 80px;
+  }
+  @media (max-width: 860px) { .case-body-grid { grid-template-columns: 1fr; gap: 28px; } }
+  .case-description { color: var(--text-secondary); font-size: 16px; line-height: 1.75; }
   .results-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 10px;
   }
   .result-item {
-    display: flex; gap: 14px; align-items: flex-start;
-    padding: 14px 18px;
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 12px 16px;
     background: rgba(125,249,2,0.04);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    font-size: 15px; line-height: 1.5;
+    border-radius: 10px;
+    font-size: 14px; line-height: 1.5;
   }
   .result-item::before {
-    content: "✦"; color: var(--accent); flex-shrink: 0; font-size: 14px; margin-top: 2px;
+    content: "✦"; color: var(--accent); flex-shrink: 0; font-size: 13px; margin-top: 2px;
   }
-  .stats-row {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 24px; margin: 56px 0;
-  }
-  .stat {
-    text-align: left;
-    border-left: 2px solid var(--accent);
-    padding: 8px 0 8px 22px;
-  }
-  .stat-num {
-    font-weight: 800;
-    font-size: clamp(34px, 4vw, 44px);
-    color: var(--accent);
-    letter-spacing: -1.5px;
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-  .stat-label { font-size: 14px; color: var(--text-secondary); font-weight: 400; }
 
   /* ---------- MACBOOK MOCKUPS ---------- */
   .mockup-block { margin-bottom: 96px; }
@@ -808,36 +811,36 @@
       <h2 class="section-title" data-i18n="case.title">From Launch to Top Seller on Amazon US</h2>
     </div>
 
-    <div class="case-hero">
-      <div class="reveal">
-        <div class="case-client-card">
-          <div class="case-logo-wrap">
-            <img src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778529411/Threshold.Shop_p3zq30.png" alt="Threshold.Shop logo" />
-            <div class="case-client-meta">
-              <span class="case-client-label" data-i18n="case.clientLabel">Featured Client</span>
-              <span class="case-client" data-i18n="case.client">Threshold.Shop — Natural Stone &amp; Marble, New Jersey, USA</span>
-              <span class="case-rating"><span class="stars">★★★★★</span> <span data-i18n="case.ratingNote">4.9 · 2,600+ verified sales on Etsy</span></span>
-            </div>
-          </div>
-        </div>
-        <p class="case-description" data-i18n="case.body">When Threshold.Shop launched on Amazon, they needed a complete visual identity built from zero. Domenek Group LLC became their exclusive creative partner — producing every image, every video, and every piece of A+ content across their entire catalog over 18 months. Today, Threshold.Shop is a top seller across multiple categories on Amazon US and holds a 4.9-star rating with over 2,600 sales on Etsy.</p>
-
-        <div class="stats-row">
-          <div class="stat"><div class="stat-num">100+</div><div class="stat-label" data-i18n="case.stat1">Product listings with full image &amp; video sets</div></div>
-          <div class="stat"><div class="stat-num">18mo</div><div class="stat-label" data-i18n="case.stat2">Exclusive creative partnership</div></div>
-          <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label" data-i18n="case.stat3">2,600+ verified sales on Etsy</div></div>
-          <div class="stat"><div class="stat-num">#1</div><div class="stat-label" data-i18n="case.stat4">Top seller in multiple Amazon US categories</div></div>
+    <!-- Client card compacta: logo + meta + stats integrados -->
+    <div class="case-client-card reveal">
+      <div class="case-logo-wrap">
+        <img src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778529411/Threshold.Shop_p3zq30.png" alt="Threshold.Shop logo" />
+        <div class="case-client-meta">
+          <span class="case-client-label" data-i18n="case.clientLabel">Featured Client</span>
+          <span class="case-client" data-i18n="case.client">Threshold.Shop — Natural Stone &amp; Marble, New Jersey, USA</span>
+          <span class="case-rating"><span class="stars">★★★★★</span> <span data-i18n="case.ratingNote">4.9 · 2,600+ verified sales on Etsy</span></span>
         </div>
       </div>
+      <div class="case-stats-strip">
+        <div class="case-stat"><div class="case-stat-num">100+</div><div class="case-stat-label" data-i18n="case.stat1">Listings</div></div>
+        <div class="case-stat-divider"></div>
+        <div class="case-stat"><div class="case-stat-num">18mo</div><div class="case-stat-label" data-i18n="case.stat2">Partnership</div></div>
+        <div class="case-stat-divider"></div>
+        <div class="case-stat"><div class="case-stat-num">4.9★</div><div class="case-stat-label" data-i18n="case.stat3">Rating</div></div>
+        <div class="case-stat-divider"></div>
+        <div class="case-stat"><div class="case-stat-num">#1</div><div class="case-stat-label" data-i18n="case.stat4">Top Seller</div></div>
+      </div>
+    </div>
 
-      <div class="reveal delay-1">
-        <div class="results-grid">
-          <div class="result-item" data-i18n="case.r1">100+ product listings with full image &amp; video sets</div>
-          <div class="result-item" data-i18n="case.r2">Full Amazon Storefront designed &amp; built</div>
-          <div class="result-item" data-i18n="case.r3">Complete A+ Content across all product lines</div>
-          <div class="result-item" data-i18n="case.r4">Motion graphics &amp; 3D product videos</div>
-          <div class="result-item" data-i18n="case.r7">Top Seller — multiple Amazon US categories</div>
-        </div>
+    <!-- Descripción + resultados lado a lado -->
+    <div class="case-body-grid">
+      <p class="case-description reveal" data-i18n="case.body">Domenek Group LLC became Threshold.Shop's exclusive creative partner from day one — producing every image, video, and A+ Content module across their entire catalog. Today they're a top seller across multiple Amazon US categories.</p>
+      <div class="results-grid reveal delay-1">
+        <div class="result-item" data-i18n="case.r1">100+ product listings with full image &amp; video sets</div>
+        <div class="result-item" data-i18n="case.r2">Full Amazon Storefront designed &amp; built</div>
+        <div class="result-item" data-i18n="case.r3">Complete A+ Content across all product lines</div>
+        <div class="result-item" data-i18n="case.r4">Motion graphics &amp; 3D product videos</div>
+        <div class="result-item" data-i18n="case.r7">Top Seller — multiple Amazon US categories</div>
       </div>
     </div>
 
