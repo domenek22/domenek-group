@@ -724,6 +724,40 @@
   .reveal.delay-3 { transition-delay: .24s; }
   .reveal.delay-4 { transition-delay: .32s; }
 
+  /* ---------- STORE PLATFORM BADGES ---------- */
+  .store-platforms {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .store-platforms-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.38);
+    margin-right: 4px;
+    white-space: nowrap;
+  }
+  .store-platform-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 14px;
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 8px;
+    background: transparent;
+    opacity: 0.6;
+    transition: opacity .25s, border-color .25s;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #fff;
+  }
+  .store-platform-badge:hover { opacity: 1; border-color: rgba(255,255,255,0.55); }
+
 </style>
 </head>
 <body>
@@ -781,6 +815,13 @@
     <div class="hero-ctas reveal delay-4">
       <a href="#contact" class="btn btn-primary"><span data-i18n="cta.quote">Get a Free Quote</span> <span class="btn-arrow">→</span></a>
       <a href="#broadcast-work" class="btn btn-outline" data-i18n="cta.viewWork">View Our Work</a>
+    </div>
+
+    <div class="store-platforms reveal delay-4">
+      <span class="store-platforms-label" data-i18n="hero.storeLabel">For</span>
+      <a href="https://www.amazon.com" target="_blank" rel="noopener" class="store-platform-badge">amazon</a>
+      <a href="https://www.shopify.com" target="_blank" rel="noopener" class="store-platform-badge">shopify</a>
+      <a href="https://www.etsy.com" target="_blank" rel="noopener" class="store-platform-badge">etsy</a>
     </div>
   </div>
 
@@ -1232,6 +1273,7 @@ const i18n = {
     'hero.trust1': 'Broadcast television production background',
     'hero.marqueeL': 'NOW BOOKING Q3 / Q4 PROJECTS',
     'hero.marqueeR': 'TAMPA, FL · USA',
+    'hero.storeLabel': 'For',
 
     'services.badge': 'What We Do',
     'services.title': 'Motion Graphics & Visual Content for Amazon',
@@ -1330,6 +1372,7 @@ const i18n = {
     'hero.trust1': 'Experiencia en producción de televisión broadcast',
     'hero.marqueeL': 'AGENDA ABIERTA — PROYECTOS Q3 / Q4',
     'hero.marqueeR': 'TAMPA, FL · EE. UU.',
+    'hero.storeLabel': 'Para',
 
     'services.badge': 'Lo Que Hacemos',
     'services.title': 'Motion Graphics y Contenido Visual para Amazon',
