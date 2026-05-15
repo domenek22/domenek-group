@@ -384,22 +384,23 @@
 
   /* Store links */
   .case-store-links {
-    display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    flex-shrink: 0;
+    align-items: flex-end;
+    margin-left: auto;
   }
   .store-link {
     display: inline-flex; align-items: center; justify-content: center;
-    padding: 7px 12px;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 7px;
-    transition: background .2s, border-color .2s, transform .2s;
+    padding: 6px 12px;
+    background: #fff;
+    border-radius: 6px;
+    min-width: 88px;
+    transition: opacity .2s, transform .2s;
   }
-  .store-link:hover {
-    background: rgba(255,255,255,0.13);
-    border-color: var(--accent);
-    transform: translateY(-2px);
-  }
-  .store-link-logo { height: 13px; width: auto; display: block; }
+  .store-link:hover { opacity: 0.82; transform: translateY(-2px); }
+  .store-link-logo { height: 12px; width: auto; display: block; }
 
   /* Stats integrados en la card */
   .case-stats-strip {
@@ -875,14 +876,17 @@
           <span class="case-client-label" data-i18n="case.clientLabel">Featured Client</span>
           <span class="case-client" data-i18n="case.client">Threshold.Shop — Natural Stone &amp; Marble, New Jersey, USA</span>
           <span class="case-rating"><span class="stars">★★★★★</span> <span data-i18n="case.ratingNote">4.9 · 2,600+ verified sales on Etsy</span></span>
-          <div class="case-store-links">
-            <a href="https://www.amazon.com/stores/ThresholdShop/page/5329DAC6-C7EC-45CA-8C12-5A2CE280734E" target="_blank" rel="noopener" class="store-link" title="Ver tienda en Amazon">
-              <img class="store-link-logo" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778802782/Amazon_logo_wkcu3v.svg" alt="Amazon" />
-            </a>
-            <a href="https://threshold.shop/" target="_blank" rel="noopener" class="store-link" title="Ver tienda en Shopify">
-              <img class="store-link-logo" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778802782/Shopify_logo_2018_n84wap.svg" alt="Shopify" />
-            </a>
-          </div>
+        </div>
+        <div class="case-store-links">
+          <a href="https://www.amazon.com/stores/ThresholdShop/page/5329DAC6-C7EC-45CA-8C12-5A2CE280734E" target="_blank" rel="noopener" class="store-link" title="Amazon Store">
+            <img class="store-link-logo" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778802782/Amazon_logo_wkcu3v.svg" alt="Amazon" />
+          </a>
+          <a href="https://threshold.shop/" target="_blank" rel="noopener" class="store-link" title="Shopify Store">
+            <img class="store-link-logo" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778802782/Shopify_logo_2018_n84wap.svg" alt="Shopify" />
+          </a>
+          <a href="https://www.etsy.com/shop/TheThresholdShop" target="_blank" rel="noopener" class="store-link" title="Etsy Store">
+            <img class="store-link-logo" src="https://res.cloudinary.com/daf7s8gc8/image/upload/q_auto/f_auto/v1778802782/Etsy_logo_kjyyno.svg" alt="Etsy" />
+          </a>
         </div>
       </div>
       <div class="case-stats-strip">
